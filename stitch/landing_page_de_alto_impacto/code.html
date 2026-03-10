@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Canarias Jugando - Descubre las Islas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f49d25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221a10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .card-float-1 { transform: rotate(-5deg) translateY(-10px); }
+        .card-float-2 { transform: rotate(8deg) translateY(15px); }
+        .card-float-3 { transform: rotate(-3deg) translateY(5px); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50 w-full border-b border-primary/20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-background-dark">
+<span class="material-symbols-outlined block text-2xl font-bold">playing_cards</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">Canarias Jugando</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Inicio</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Colección</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Eventos</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Sobre Nosotros</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-background-dark hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                        Dónde Comprar
+                    </button>
+<button class="md:hidden text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section with Floating Cards Concept -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden px-4 py-20 lg:py-0">
+<!-- Background decorative elements -->
+<div class="absolute top-0 right-0 -z-10 w-1/2 h-full opacity-20 dark:opacity-30 pointer-events-none">
+<div class="absolute top-1/4 right-0 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-8 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 self-center lg:self-start">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Edición Limitada Coleccionable</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                    Descubre <span class="text-primary">Canarias</span> Jugando
+                </h1>
+<p class="text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+                    Explora la cultura, historia y parajes de las Islas Canarias a través de nuestro juego de cartas educativo. Una aventura épica en cada mazo.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<button class="rounded-xl bg-primary px-8 py-4 text-lg font-bold text-background-dark hover:scale-105 transition-transform shadow-xl shadow-primary/25">
+                        Empieza la Aventura
+                    </button>
+<button class="rounded-xl border border-primary/30 bg-primary/5 px-8 py-4 text-lg font-bold text-slate-900 dark:text-white hover:bg-primary/10 transition-all">
+                        Ver el Tráiler
+                    </button>
+</div>
+</div>
+<!-- Parallax Floating Cards Area -->
+<div class="relative h-[500px] flex items-center justify-center">
+<!-- Card 1: Guanchito -->
+<div class="absolute z-30 card-float-1 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-2xl border border-primary/20 w-64 md:w-72">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-700 relative group" data-alt="Ilustración del personaje Guanchito en una carta">
+<img alt="Guanchito" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJy4Zqcw65pgGwzt4KzQ8iRicH-yaAdSot96WIhW6JrC9GJhx3GjnDWfDXpKfChqGvwYyT_1eLXyS0v0LIbXoDqt2Pd5AKgWcEPPPQk0qRt1axwdF48nN3JpEURVumzIElvc_CKvu84a1tC6CNu0mQVASNHSkdV9eW8c3r_4nqsijVaymed6tSm5kOwP3ir2mZEts6ndcOIiUBADLJxfpoiR5b8GsAv_ef1MIHLhETD0BMK8B6wxLcCp6nfqYoY-qX4C2SCUVU_uSE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+<span class="text-primary text-xs font-bold tracking-widest uppercase">Héroe Legendario</span>
+<h3 class="text-white text-lg font-bold">Guanchito</h3>
+</div>
+</div>
+<div class="space-y-2">
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-600 rounded-full"></div>
+<div class="h-1.5 w-2/3 bg-slate-200 dark:bg-slate-600 rounded-full"></div>
+</div>
+</div>
+<!-- Card 2: Cultural Fact -->
+<div class="absolute z-20 card-float-2 -translate-x-20 -translate-y-12 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-primary/10 w-56 md:w-64 opacity-80 lg:opacity-100">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-700" data-alt="Paisaje del Teide en una carta de juego">
+<img alt="Teide" class="w-full h-full object-cover grayscale-[0.5]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4dp_mKZorkujC4LFdacDcccrfGyDvAEuZ712Jyi_kr0mZ8wf0OeJOb-DUHlg3t7gSK9Y1rfI2DkL6ESG5mMGcqTF9Gl9E8ph75fodjSLycGEOR1sXOuln7t3oF1hO66iRwLFMJJnJZRd5JvwjhwvbIbcnEwB_NdraINmooSb41R9R6I253jtELDdw2r95LFFys2O3HgP81gn3D9h5xu4pQ2nq1V1bi52Qk9_z2s-kTvqNzkkRteJmvUFzdtXBh0omEXzLhNjCSFf9"/>
+</div>
+<div class="space-y-2">
+<div class="h-1 w-full bg-slate-200 dark:bg-slate-600 rounded-full"></div>
+<div class="h-1 w-1/2 bg-slate-200 dark:bg-slate-600 rounded-full"></div>
+</div>
+</div>
+<!-- Card 3: Victory Points -->
+<div class="absolute z-10 card-float-3 translate-x-24 translate-y-16 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-lg border border-primary/10 w-48 md:w-56 opacity-60 lg:opacity-100">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-700 flex items-center justify-center" data-alt="Icono de puntos de victoria dorados">
+<span class="material-symbols-outlined text-primary text-6xl">stars</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scroll-telling Card Breakdown -->
+<section class="py-24 bg-primary/5 relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-20 flex flex-col items-center">
+<h2 class="text-3xl md:text-5xl font-extrabold mb-6 dark:text-white">Anatomía de una Carta</h2>
+<div class="w-24 h-1.5 bg-primary rounded-full mb-6"></div>
+<p class="text-slate-600 dark:text-slate-300 max-w-2xl">Cada detalle ha sido cuidadosamente diseñado por artistas canarios para transmitir nuestra esencia y facilitar el juego.</p>
+</div>
+<div class="relative grid lg:grid-cols-2 gap-20 items-center">
+<!-- Large Detailed Card -->
+<div class="relative flex justify-center">
+<div class="w-full max-w-[380px] aspect-[1/1.5] bg-slate-800 rounded-[2rem] p-6 shadow-2xl border-4 border-primary/40 relative">
+<!-- Top Header -->
+<div class="flex justify-between items-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">shield</span>
+<div class="px-3 py-1 bg-primary/20 rounded-lg text-primary text-xs font-bold uppercase tracking-wider">Nivel 4</div>
+</div>
+<!-- Main Illustration -->
+<div class="w-full h-[60%] bg-slate-700 rounded-xl mb-6 relative overflow-hidden" data-alt="Primer plano de un guerrero guanche con lanza">
+<img alt="Guerrero" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnRvoMPegKp1Lzw31W1RMQszFwI8-5vUgw0SWTGe9cqowxcDJ_Xau0YEGO7mtE7lwLem91y98eZPZ2b2zILCABE6VPNcIq5GyiEUWoW9VjljnJLLHPuvSbwiPisGkk_pu70WvywYWxRp0nUW7psRhntmpLWesvR2jyNps6TZ_piu7Z-_I4yc6_kkZHm-czdl86p8Kwd95DyFQMp7tWbeJtrPeSZQ1kkdayNzI5naT0_iLcDywZ_UlzMmTru3-QnGuwF4GR9v2DeW3p"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-slate-900 to-transparent">
+<h4 class="text-white text-xl font-bold italic">El Mencey de Abona</h4>
+</div>
+</div>
+<!-- Lore text -->
+<div class="space-y-3">
+<div class="h-1.5 w-full bg-slate-600 rounded-full"></div>
+<div class="h-1.5 w-full bg-slate-600 rounded-full"></div>
+<div class="h-1.5 w-3/4 bg-slate-600 rounded-full"></div>
+</div>
+<!-- Mechanics -->
+<div class="absolute bottom-6 right-6 flex items-center gap-2">
+<span class="text-primary font-black text-2xl">15</span>
+<span class="material-symbols-outlined text-primary">token</span>
+</div>
+<!-- Explainer Lines & Tags (Desktop Only) -->
+<div class="hidden lg:block">
+<!-- Points Pointer -->
+<div class="absolute bottom-10 -right-40 flex items-center group">
+<div class="w-40 h-px bg-primary relative">
+<div class="absolute right-0 -top-1 w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div class="ml-4 bg-background-dark p-4 rounded-xl border border-primary/30 w-52 shadow-xl">
+<h5 class="text-primary font-bold mb-1">Puntos de Victoria</h5>
+<p class="text-xs text-slate-300">Determina el valor estratégico al final de cada turno.</p>
+</div>
+</div>
+<!-- Illustration Pointer -->
+<div class="absolute top-1/2 -left-48 flex items-center group">
+<div class="mr-4 bg-background-dark p-4 rounded-xl border border-primary/30 w-52 shadow-xl text-right">
+<h5 class="text-primary font-bold mb-1">Arte Original</h5>
+<p class="text-xs text-slate-300">Ilustraciones únicas inspiradas en yacimientos reales.</p>
+</div>
+<div class="w-48 h-px bg-primary relative">
+<div class="absolute left-0 -top-1 w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Features list for mobile/desktop layout -->
+<div class="flex flex-col gap-6">
+<div class="group flex gap-6 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm">
+<div class="size-14 flex items-center justify-center rounded-xl bg-primary text-background-dark flex-shrink-0">
+<span class="material-symbols-outlined text-3xl font-bold">palette</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2 dark:text-white">Ilustraciones Artísticas</h3>
+<p class="text-slate-600 dark:text-slate-400">Cada carta es una obra de arte original que captura el misticismo y la fuerza de los antiguos canarios.</p>
+</div>
+</div>
+<div class="group flex gap-6 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm">
+<div class="size-14 flex items-center justify-center rounded-xl bg-primary text-background-dark flex-shrink-0">
+<span class="material-symbols-outlined text-3xl font-bold">auto_stories</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2 dark:text-white">Datos Curiosos</h3>
+<p class="text-slate-600 dark:text-slate-400">Aprende sobre botánica endémica, volcanología y leyendas populares mientras compites con tus amigos.</p>
+</div>
+</div>
+<div class="group flex gap-6 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm">
+<div class="size-14 flex items-center justify-center rounded-xl bg-primary text-background-dark flex-shrink-0">
+<span class="material-symbols-outlined text-3xl font-bold">casino</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2 dark:text-white">Sistema de Juego Equilibrado</h3>
+<p class="text-slate-600 dark:text-slate-400">Reglas dinámicas diseñadas para jugadores de 8 a 99 años. Estrategia y suerte a partes iguales.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Event Teaser Strip -->
+<div class="bg-primary/10 border-y border-primary/20 py-8 overflow-hidden whitespace-nowrap">
+<div class="flex items-center gap-12 animate-scroll">
+<div class="flex items-center gap-4 px-8 border-r border-primary/30">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<span class="text-lg font-bold uppercase tracking-tighter dark:text-white">Gran Canaria Comic-Con (Oct 15)</span>
+</div>
+<div class="flex items-center gap-4 px-8 border-r border-primary/30">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<span class="text-lg font-bold uppercase tracking-tighter dark:text-white">Torneo Tenerife 2024 (Nov 2)</span>
+</div>
+<div class="flex items-center gap-4 px-8 border-r border-primary/30">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<span class="text-lg font-bold uppercase tracking-tighter dark:text-white">Presentación El Hierro (Dic 5)</span>
+</div>
+<div class="flex items-center gap-4 px-8 border-r border-primary/30">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<span class="text-lg font-bold uppercase tracking-tighter dark:text-white">Game Jam Canarias (Ene 12)</span>
+</div>
+<div class="flex items-center gap-4 px-8 border-r border-primary/30">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<span class="text-lg font-bold uppercase tracking-tighter dark:text-white">Taller de Ilustración (Feb 22)</span>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark pt-20 pb-10 px-4">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10 border-t border-slate-200 dark:border-slate-800 pt-10">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">playing_cards</span>
+<span class="text-xl font-bold dark:text-white">Canarias Jugando</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm text-sm">
+                    Llevando la riqueza del archipiélago a tu mesa de juego. Una iniciativa para preservar nuestra cultura.
+                </p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">forum</span>
+</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-10 text-center text-slate-500 text-xs">
+            © 2024 Canarias Jugando. Todos los derechos reservados. Made in Canary Islands.
+        </div>
+</footer>
+</body></html>

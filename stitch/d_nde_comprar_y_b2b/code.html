@@ -1,0 +1,282 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f49d25",
+            "background-light": "#f8f7f5",
+            "background-dark": "#221a10",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-primary/20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-10 py-4">
+<div class="mx-auto flex max-w-7xl items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">set_meal</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">Canarias Jugando</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Mapa</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tiendas</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Museos</a>
+<a class="text-sm font-semibold text-primary underline decoration-2 underline-offset-4" href="#">Canal B2B</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 flex-1 justify-end">
+<label class="hidden sm:flex relative items-center max-w-xs w-full">
+<span class="material-symbols-outlined absolute left-3 text-slate-400 dark:text-primary/50">search</span>
+<input class="w-full rounded-lg border-none bg-slate-100 dark:bg-primary/10 py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50" placeholder="Buscar por isla..."/>
+</label>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-primary/10 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary">dark_mode</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-gradient-to-tr from-primary to-orange-300" data-alt="User profile avatar placeholder"></div>
+</div>
+</div>
+</header>
+<main class="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-8 p-6 md:p-10">
+<!-- Hero Section -->
+<section class="flex flex-col gap-4">
+<h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white">Dónde Comprar</h1>
+<p class="max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+          Encuentra nuestros juegos educativos y tradicionales en las mejores jugueterías, librerías y tiendas de museos de todo el archipiélago.
+        </p>
+</section>
+<!-- Map & Sidebar Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Interactive Map Container -->
+<div class="lg:col-span-8 flex flex-col gap-4">
+<div class="flex items-center gap-2 overflow-x-auto pb-2">
+<button class="flex items-center gap-2 whitespace-nowrap rounded-full bg-primary px-4 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">public</span> Todos
+            </button>
+<button class="flex items-center gap-2 whitespace-nowrap rounded-full bg-slate-100 dark:bg-primary/10 px-4 py-2 text-sm font-bold hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-sm">storefront</span> Tiendas
+            </button>
+<button class="flex items-center gap-2 whitespace-nowrap rounded-full bg-slate-100 dark:bg-primary/10 px-4 py-2 text-sm font-bold hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-sm">museum</span> Museos
+            </button>
+<button class="flex items-center gap-2 whitespace-nowrap rounded-full bg-slate-100 dark:bg-primary/10 px-4 py-2 text-sm font-bold hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-sm">school</span> Centros Educativos
+            </button>
+</div>
+<div class="relative min-h-[500px] w-full overflow-hidden rounded-2xl bg-slate-200 dark:bg-primary/5 shadow-inner group">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Stylized map of Canary Islands with location pins" data-location="Canary Islands" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCw04wHKFjnzR9uAv0lXP_Q04Evnt4Ypd9_6lOomp7Cj0n71UE8M_IFdlMm6b9rGG6SljefigdkMetH6VFu_CxtyUVMaWmHXN4mFZhu8-DMZ85TOllKruQZSTV07yiw0onXqBzH8n3kEECgOoAzNYi02SE_I32iu8dLiryfBk_qHhJ7c39XgRcejhmAE1jC5gC3DqCrAPQ90VaO_ny95lqX1N9RMRtkWdNixZ9lSQju_zvTOvgmt2uCH_4NmV2fndJ_BF7ltMccy6fS');">
+<!-- Mock Markers -->
+<div class="absolute top-[30%] left-[20%] group/marker">
+<span class="material-symbols-outlined text-primary text-4xl cursor-pointer drop-shadow-md animate-bounce">location_on</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/marker:block w-48 rounded-lg bg-white dark:bg-background-dark p-3 text-xs shadow-xl border border-primary/20">
+<p class="font-bold">Museo Elder</p>
+<p class="text-slate-500">Las Palmas de G.C.</p>
+</div>
+</div>
+<div class="absolute top-[45%] left-[55%] group/marker">
+<span class="material-symbols-outlined text-primary text-4xl cursor-pointer drop-shadow-md">location_on</span>
+</div>
+<div class="absolute top-[60%] left-[75%] group/marker">
+<span class="material-symbols-outlined text-primary text-4xl cursor-pointer drop-shadow-md">location_on</span>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute bottom-6 right-6 flex flex-col gap-2">
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-white dark:bg-background-dark text-slate-900 dark:text-white shadow-lg">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-white dark:bg-background-dark text-slate-900 dark:text-white shadow-lg">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="mt-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Island Selector (Floating) -->
+<div class="absolute top-6 left-6 hidden sm:flex flex-col gap-2 p-2 rounded-xl bg-white/90 dark:bg-background-dark/90 backdrop-blur shadow-xl">
+<p class="px-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Seleccionar Isla</p>
+<div class="grid grid-cols-2 gap-1">
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">Tenerife</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">Gran Canaria</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">Lanzarote</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">Fuerteventura</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">La Palma</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">La Gomera</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">El Hierro</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded hover:bg-primary hover:text-white text-left transition-colors">La Graciosa</button>
+</div>
+</div>
+</div>
+</div>
+<!-- B2B / Educational Sidebar -->
+<aside class="lg:col-span-4 flex flex-col gap-6">
+<div class="rounded-2xl border border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 p-6 shadow-sm">
+<div class="mb-6 flex items-center gap-3">
+<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl font-bold">handshake</span>
+</div>
+<div>
+<h3 class="text-xl font-bold">Canal B2B</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Ventas para colegios y mayoristas</p>
+</div>
+</div>
+<form class="flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold uppercase text-slate-500">Tipo de Entidad</label>
+<select class="rounded-lg border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark py-2.5 text-sm focus:border-primary focus:ring-primary/20">
+<option>Centro Educativo</option>
+<option>Distribuidor / Mayorista</option>
+<option>Tienda Especializada</option>
+<option>Institución Pública</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold uppercase text-slate-500">Nombre de contacto</label>
+<input class="rounded-lg border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark py-2.5 text-sm focus:border-primary focus:ring-primary/20" placeholder="Ej: Juan Pérez" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold uppercase text-slate-500">Email profesional</label>
+<input class="rounded-lg border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark py-2.5 text-sm focus:border-primary focus:ring-primary/20" placeholder="email@entidad.com" type="email"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold uppercase text-slate-500">Mensaje / Pedido</label>
+<textarea class="rounded-lg border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark py-2.5 text-sm focus:border-primary focus:ring-primary/20" placeholder="Cuéntanos tus necesidades..." rows="3"></textarea>
+</div>
+<button class="mt-2 w-full rounded-xl bg-primary py-3 font-bold text-white shadow-lg shadow-primary/30 transition-transform active:scale-95" type="submit">
+                Solicitar Información
+              </button>
+</form>
+<div class="mt-6 border-t border-slate-200 dark:border-primary/10 pt-6">
+<p class="text-center text-xs text-slate-500">
+                ¿Prefieres hablar con nosotros? <br/>
+<a class="font-bold text-primary hover:underline" href="#">+34 922 00 00 00</a>
+</p>
+</div>
+</div>
+<!-- Featured Retailer Card -->
+<div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-orange-600 p-6 text-white shadow-xl">
+<span class="material-symbols-outlined absolute -right-4 -top-4 text-8xl opacity-10 rotate-12">auto_awesome</span>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="rounded-full bg-white/20 px-3 py-1 text-[10px] font-bold uppercase w-fit">Destacado</div>
+<h4 class="text-2xl font-extrabold leading-tight">¿Quieres ser punto de venta oficial?</h4>
+<p class="text-sm text-white/80">Únete a nuestra red de más de 150 puntos de venta en toda Canarias y ofrece cultura y diversión.</p>
+<a class="flex items-center gap-2 text-sm font-bold underline underline-offset-4" href="#">
+                Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Nearby Locations List -->
+<section class="mt-8 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-bold">Puntos cercanos a ti</h2>
+<a class="text-sm font-bold text-primary hover:underline" href="#">Ver lista completa</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Store Card -->
+<div class="flex flex-col gap-3 rounded-2xl bg-white dark:bg-primary/5 p-4 border border-slate-100 dark:border-primary/10 hover:border-primary transition-colors cursor-pointer group">
+<div class="aspect-video w-full rounded-xl bg-slate-200 dark:bg-primary/20 bg-cover bg-center overflow-hidden" data-alt="Photo of a local toy store interior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGGeUJ-MFoYoJL7tOdwN6kS0fE-6i-gLZBfJei9xGBkx4Ls9Gw2KIQEAyrZ1qyFkeQLXp7fCbk4yGdewWu68t5Fybf_ohVYV-wlKh6BcWzCUOKIU38pgsrfbM6IGZUOuAn3ebRX4ZSQn2cLLsehBOxnDUg4y9usr2KG97UUnrU8nDvvOikC2BIRCNXJGxQzh0CXWi_NthIOxvdhtBdodYDfk0mLuOUUbgX0IlljqopAVuU-Dd32jzUhjJmqanlRjuQdXILq9TMJTTx');"></div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-black uppercase text-primary">Tienda</span>
+<span class="text-[10px] text-slate-400">1.2 km</span>
+</div>
+<h5 class="font-bold group-hover:text-primary transition-colors">Juguetería Arrorró</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400">C. Triana, 45, Las Palmas</p>
+</div>
+</div>
+<!-- Store Card 2 -->
+<div class="flex flex-col gap-3 rounded-2xl bg-white dark:bg-primary/5 p-4 border border-slate-100 dark:border-primary/10 hover:border-primary transition-colors cursor-pointer group">
+<div class="aspect-video w-full rounded-xl bg-slate-200 dark:bg-primary/20 bg-cover bg-center overflow-hidden" data-alt="External view of a cultural museum" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLZHuMOJvH1u5CKo7WqnpcAJ92iKsFU-2Ai04iQ16f4s3-3heIENi3mbvsrzGcWShd8iKAmX261TWvKjK2LOO93PMmhxGP-eQ47P3ONsq1NQP5EVAeIiVDeXX3Mrn1ms4zN2BskTKS2W85lp2aJA5v0oL7WkhmpX7KTz9Fz4tGhEeXrRCNr0qMfo0cBxHyUCDF15e6y-W0zj3WkZkaXZ7tet51_72aShDVCKcbrcjqdc_TH86V977oG_-2WnM5vnkcV5UQrWuMi57O');"></div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-black uppercase text-primary">Museo</span>
+<span class="text-[10px] text-slate-400">3.5 km</span>
+</div>
+<h5 class="font-bold group-hover:text-primary transition-colors">Casa de Colón</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400">C. Colón, 1, Vegueta</p>
+</div>
+</div>
+<!-- Store Card 3 -->
+<div class="flex flex-col gap-3 rounded-2xl bg-white dark:bg-primary/5 p-4 border border-slate-100 dark:border-primary/10 hover:border-primary transition-colors cursor-pointer group">
+<div class="aspect-video w-full rounded-xl bg-slate-200 dark:bg-primary/20 bg-cover bg-center overflow-hidden" data-alt="Specialized stationery and gift shop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFxBGDsoRgyaiQcS5haN0Bg_zdG7YMep0wlaU2b1PcBhcyzg5voJDAiF6-5vfvA2139wTu7RdEXlet8aRzuAgKjdb-7EsdXwuW83mC-jQqBwvNfY2jP-aWAP_baH-fRHjj36C8aO2TtkBh7kCpHIl5IYQbAWCFVd7khyegW-IpVSl3-fGJOqx8G4GJCW8mvI0pKyZ7nymjyxlz6_VqdYgy5U0tYZVlvT0vDFP810w5pdikvV85n5a_4V3nMjRDUCFOY-kS23_bU3CC');"></div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-black uppercase text-primary">Tienda</span>
+<span class="text-[10px] text-slate-400">4.1 km</span>
+</div>
+<h5 class="font-bold group-hover:text-primary transition-colors">Librería El Clip</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400">Av. Mesa y López, 12</p>
+</div>
+</div>
+<!-- Store Card 4 -->
+<div class="flex flex-col gap-3 rounded-2xl bg-white dark:bg-primary/5 p-4 border border-slate-100 dark:border-primary/10 hover:border-primary transition-colors cursor-pointer group">
+<div class="aspect-video w-full rounded-xl bg-slate-200 dark:bg-primary/20 bg-cover bg-center overflow-hidden" data-alt="Modern museum gift store" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHacpPWjlxpIKPwUi1WEJtuu8Qt-XRdT96Mn2L0oIQWOIYh7M0tSixATP6FmpMbbtmDeT9I8_2P0fPHgnHtdr3RUlaKuXBaEhNLdbhbT16vVpmOW9GSSW2cVsBQHPOdXpcPuOCw4WLHIEZfRJSDwiDMKp3rPIHbyDfkm5akQGSi_ln1Jip_8ynBXJppowWRzrb9YEIFSjq0cy6jN-yROe4aBuj13ll_np0oFtIKTjlhgOSdl0L6mibui0qzLGGOCEc3s4dnoQUd0m3');"></div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-black uppercase text-primary">Museo</span>
+<span class="text-[10px] text-slate-400">5.8 km</span>
+</div>
+<h5 class="font-bold group-hover:text-primary transition-colors">Tienda Museo CAAM</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400">C. Los Balcones, 11</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-slate-200 dark:border-primary/10 bg-white dark:bg-background-dark/50 px-10 py-12">
+<div class="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">set_meal</span>
+<span class="text-xl font-bold text-slate-900 dark:text-white">Canarias Jugando</span>
+</div>
+<p class="max-w-xs text-sm text-slate-500">Divulgando la cultura canaria a través del juego y la educación desde 2010.</p>
+</div>
+<div class="grid grid-cols-2 gap-10 sm:grid-cols-3">
+<div class="flex flex-col gap-3">
+<p class="text-sm font-bold uppercase tracking-widest text-primary">Explorar</p>
+<a class="text-sm hover:text-primary" href="#">Mapa</a>
+<a class="text-sm hover:text-primary" href="#">Catálogo</a>
+<a class="text-sm hover:text-primary" href="#">Blog</a>
+</div>
+<div class="flex flex-col gap-3">
+<p class="text-sm font-bold uppercase tracking-widest text-primary">B2B</p>
+<a class="text-sm hover:text-primary" href="#">Canal Mayorista</a>
+<a class="text-sm hover:text-primary" href="#">Centros Educativos</a>
+<a class="text-sm hover:text-primary" href="#">Condiciones</a>
+</div>
+<div class="flex flex-col gap-3">
+<p class="text-sm font-bold uppercase tracking-widest text-primary">Soporte</p>
+<a class="text-sm hover:text-primary" href="#">Contacto</a>
+<a class="text-sm hover:text-primary" href="#">FAQs</a>
+<a class="text-sm hover:text-primary" href="#">Envíos</a>
+</div>
+</div>
+</div>
+<div class="mx-auto mt-12 max-w-7xl pt-8 border-t border-slate-200 dark:border-primary/10 text-center text-xs text-slate-500">
+        © 2024 Canarias Jugando. Hecho con amor en las Islas Canarias.
+      </div>
+</footer>
+</div>
+</body></html>

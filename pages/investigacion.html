@@ -1,0 +1,153 @@
+<!-- pages/investigacion.html – Research Menu Section -->
+
+<section class="invest-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">🔬 Aprende más</span>
+            <h2>Investigación</h2>
+            <p>Explora los temas culturales e históricos detrás de cada carta. Desliza para ver más.</p>
+        </div>
+    </div>
+
+    <!-- Horizontal menu (full-bleed for scroll feel) -->
+    <div class="invest-menu-wrap" id="investMenuWrap">
+        <div class="invest-menu" id="investMenu">
+
+            <button class="invest-btn active" data-topic="guanches">
+                <span class="invest-btn-icon">🗿</span>
+                <span class="invest-btn-title">Los Guanches</span>
+                <span class="invest-btn-sub">Pueblo original de Canarias</span>
+            </button>
+
+            <button class="invest-btn" data-topic="volcanes">
+                <span class="invest-btn-icon">🌋</span>
+                <span class="invest-btn-title">Volcanes</span>
+                <span class="invest-btn-sub">Origen geológico de las islas</span>
+            </button>
+
+            <button class="invest-btn" data-topic="flora">
+                <span class="invest-btn-icon">🌿</span>
+                <span class="invest-btn-title">Flora Única</span>
+                <span class="invest-btn-sub">Endemismos botánicos</span>
+            </button>
+
+            <button class="invest-btn" data-topic="fauna">
+                <span class="invest-btn-icon">🦎</span>
+                <span class="invest-btn-title">Fauna Endémica</span>
+                <span class="invest-btn-sub">Especies solo en Canarias</span>
+            </button>
+
+            <button class="invest-btn" data-topic="gastronomia">
+                <span class="invest-btn-icon">🍽️</span>
+                <span class="invest-btn-title">Gastronomía</span>
+                <span class="invest-btn-sub">Sabores de las 7 islas</span>
+            </button>
+
+            <button class="invest-btn" data-topic="rupestre">
+                <span class="invest-btn-icon">🪨</span>
+                <span class="invest-btn-title">Arte Rupestre</span>
+                <span class="invest-btn-sub">Pintaderas y grabados</span>
+            </button>
+
+            <button class="invest-btn" data-topic="arquitectura">
+                <span class="invest-btn-icon">🏛️</span>
+                <span class="invest-btn-title">Arquitectura</span>
+                <span class="invest-btn-sub">De dragos a megalitos</span>
+            </button>
+
+            <button class="invest-btn" data-topic="historia">
+                <span class="invest-btn-icon">📜</span>
+                <span class="invest-btn-title">Historia</span>
+                <span class="invest-btn-sub">Conquista y autonomía</span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Scroll arrows -->
+    <div class="container">
+        <div class="invest-arrows">
+            <button class="invest-arrow" id="investLeft">←</button>
+            <button class="invest-arrow" id="investRight">→</button>
+        </div>
+
+        <!-- Content panel (swapped by JS) -->
+        <div class="invest-panel" id="investPanel">
+            <div class="invest-panel-inner">
+                <div class="invest-panel-icon">🗿</div>
+                <div>
+                    <h2>Los Guanches</h2>
+                    <p class="panel-lead">El pueblo originario de las Islas Canarias vivió aislado del mundo durante
+                        milenios, desarrollando una cultura única que aún impregna el ADN de las islas.</p>
+                    <div class="invest-facts">
+                        <div class="invest-fact">
+                            <span class="fact-icon">📍</span>
+                            <p>Llegaron probablemente desde el norte de África hace más de 2.000 años, emparentados con
+                                los antiguos bereberes.</p>
+                        </div>
+                        <div class="invest-fact">
+                            <span class="fact-icon">⚔️</span>
+                            <p>Resistieron la conquista castellana durante casi un siglo, siendo los últimos pueblos
+                                europeos en ser sometidos.</p>
+                        </div>
+                        <div class="invest-fact">
+                            <span class="fact-icon">🌋</span>
+                            <p>Su dios principal era Achamán, y el Teide era considerado la morada del dios del mal,
+                                Guayota.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // ── Investigation menu logic (inline, scoped to this page) ──
+    (function () {
+        const TOPICS = {
+            guanches: { icon: '🗿', title: 'Los Guanches', lead: 'El pueblo originario de las Islas Canarias vivió aislado del mundo durante milenios, desarrollando una cultura única.', facts: ['📍 Llegaron probablemente desde el norte de África hace más de 2.000 años.', '⚔️ Resistieron la conquista castellana durante casi un siglo.', '🌋 Su dios principal era Achamán y el Teide era morada del mal.'] },
+            volcanes: { icon: '🌋', title: 'Volcanes', lead: 'Las Islas Canarias nacieron del fuego. Son la parte emergida de una cadena de volcanes submarinos en el Atlántico.', facts: ['🔥 El Teide es el volcán más alto de España con 3.715 m.', '🌍 La última gran erupción fue en La Palma en 2021.', '💧 Los tubos volcánicos forman espectaculares cuevas y lagunas.'] },
+            flora: { icon: '🌿', title: 'Flora Única', lead: 'El Archipiélago Canario alberga más de 700 especies vegetales endémicas, resultado de millones de años de evolución aislada.', facts: ['🌳 El drago es el árbol símbolo de Canarias, con más de 800 años de vida.', '🌸 La flor de la Tajinaste rojo solo crece en el Teide.', '🤿 Los bosques de laurisilva son un relicto del Mioceno.'] },
+            fauna: { icon: '🦎', title: 'Fauna Endémica', lead: 'Aves, reptiles e insectos que no existen en ningún otro lugar del planeta.', facts: ['🦅 El pinzón azul del Teide es una especie exclusiva del Parque Nacional.', '🦎 El Lagarto Gigante de El Hierro fue redescubierto en 1999.', '🐠 Los fondos marinos canarios albergan más de 700 especies de peces.'] },
+            gastronomia: { icon: '🍽️', title: 'Gastronomía', lead: 'La cocina canaria fusiona sabores africanos, americanos y europeos en una identidad culinaria única.', facts: ['🌾 El gofio, harina de cereales tostados, es el ingrediente más antiguo.', '🥔 Las papas arrugadas con mojo son el plato más reconocido internacionalmente.', '🐟 El escaldón, caldo con gofio y marisco, define la costa canaria.'] },
+            rupestre: { icon: '🪨', title: 'Arte Rupestre', lead: 'Las islas conservan miles de grabados y pinturas realizados por los guanches hace más de 1.000 años.', facts: ['🖋️ Las Pintaderas son sellos de arcilla con diseños geométricos únicos.', '🔺 El Risco Caido en Gran Canaria es Patrimonio de la Humanidad.', '🧭 Los grabados astronómicos servían como calendarios agrícolas.'] },
+            arquitectura: { icon: '🏛️', title: 'Arquitectura', lead: 'De los aljibes y caseríos canarios a las cuevas volcánicas habitadas desde la prehistoria.', facts: ['🏚️ Las casas canarias tradicionales tienen balcones de madera tallada típicos.', '🕳️ La Cueva de los Verdes en Lanzarote es un tubo volcánico de 6 km.', '⛵ Los puertos del siglo XVI muestran la ruta comercial entre Europa y América.'] },
+            historia: { icon: '📜', title: 'Historia', lead: 'Desde la conquista en el siglo XV hasta la autonomía de 1982, Canarias ha sido siempre un cruce de civilizaciones.', facts: ['⚔️ La conquista de Canarias fue la primera del Imperio español.', '🌍 Las islas fueron base de abastecimiento de los viajes de Colón.', '🏛️ Canarias logró el Estatuto de Autonomía el 10 de agosto de 1982.'] },
+        };
+
+        function renderPanel(topic) {
+            const d = TOPICS[topic];
+            if (!d) return;
+            const panel = document.getElementById('investPanel');
+            if (!panel) return;
+            panel.innerHTML = `
+      <div class="invest-panel-inner">
+        <div class="invest-panel-icon">${d.icon}</div>
+        <div>
+          <h2>${d.title}</h2>
+          <p class="panel-lead">${d.lead}</p>
+          <div class="invest-facts">${d.facts.map(f => `<div class="invest-fact"><span class="fact-icon">${f.substring(0, 2)}</span><p>${f.substring(2)}</p></div>`).join('')}</div>
+        </div>
+      </div>`;
+            // Re-trigger animation
+            panel.style.animation = 'none';
+            requestAnimationFrame(() => { panel.style.animation = ''; });
+        }
+
+        // Wire buttons
+        document.querySelectorAll('.invest-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.invest-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderPanel(btn.dataset.topic);
+            });
+        });
+
+        // Arrow scroll
+        const menu = document.getElementById('investMenu');
+        document.getElementById('investLeft')?.addEventListener('click', () => menu && (menu.scrollLeft -= 220));
+        document.getElementById('investRight')?.addEventListener('click', () => menu && (menu.scrollLeft += 220));
+    })();
+</script>

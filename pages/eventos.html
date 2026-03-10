@@ -1,0 +1,126 @@
+<!-- pages/eventos.html – Eventos section fragment -->
+
+<section class="events-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">📅 Únete a la comunidad</span>
+            <h2>Eventos</h2>
+            <p>Demos, talleres y ferias donde puedes jugar, aprender y llevarte el juego</p>
+        </div>
+
+        <div class="events-grid">
+            <!-- Calendar -->
+            <div class="events-calendar">
+                <h3>Calendario 2026</h3>
+
+                <div class="cal-event confirmed">
+                    <div class="cal-dot"></div>
+                    <div class="cal-content">
+                        <span class="cal-date">15 Marzo · 11:00h</span>
+                        <h4>Demo en Librería Canarim</h4>
+                        <p>Las Palmas de Gran Canaria — Libre acceso</p>
+                        <div class="cal-tags"><span>Demo</span><span>Familiar</span></div>
+                    </div>
+                </div>
+
+                <div class="cal-event confirmed">
+                    <div class="cal-dot"></div>
+                    <div class="cal-content">
+                        <span class="cal-date">22 Marzo · 09:30h</span>
+                        <h4>Taller Escolar CEIP Las Palmas</h4>
+                        <p>Santa Cruz de Tenerife — Acceso con invitación</p>
+                        <div class="cal-tags"><span>Colegio</span><span>Pedagógico</span></div>
+                    </div>
+                </div>
+
+                <div class="cal-event upcoming">
+                    <div class="cal-dot"></div>
+                    <div class="cal-content">
+                        <span class="cal-date">05 Abril · 10:00h</span>
+                        <h4>Feria de Artesanía Canaria</h4>
+                        <p>Arrecife, Lanzarote — Todo el día</p>
+                        <div class="cal-tags"><span>Feria</span><span>Venta</span></div>
+                    </div>
+                </div>
+
+                <div class="cal-event upcoming">
+                    <div class="cal-dot"></div>
+                    <div class="cal-content">
+                        <span class="cal-date">20 Abril · 12:00h</span>
+                        <h4>Jornada Cultural La Palma</h4>
+                        <p>Santa Cruz de La Palma — Entrada gratuita</p>
+                        <div class="cal-tags"><span>Cultural</span><span>Demo</span></div>
+                    </div>
+                </div>
+
+                <div class="cal-event upcoming">
+                    <div class="cal-dot"></div>
+                    <div class="cal-content">
+                        <span class="cal-date">30 Mayo · 10:00h</span>
+                        <h4>Día de Canarias – Feria Especial</h4>
+                        <p>Santa Cruz de Tenerife — Gran Evento Anual</p>
+                        <div class="cal-tags"><span>Especial</span><span>Todas las islas</span></div>
+                    </div>
+                </div>
+
+                <div class="cal-event tbd">
+                    <div class="cal-dot"></div>
+                    <div class="cal-content">
+                        <span class="cal-date">Julio 2026 · Por confirmar</span>
+                        <h4>Tour de Verano – 7 Islas</h4>
+                        <p>Una isla por semana durante julio</p>
+                        <div class="cal-tags"><span>Tour</span><span>Próximamente</span></div>
+                    </div>
+                </div>
+
+                <div class="cal-cta">
+                    <p>¿Quieres que vengamos a tu colegio o evento?</p>
+                    <button class="btn-outline" onclick="Router.go('donde-comprar')">Contacta con nosotros</button>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="events-gallery">
+                <h3>Galería – Momentos de juego</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item gallery-main">
+                        <img src="assets/event_photo.png" alt="Personas jugando CANARYONE en librería" />
+                        <div class="gallery-overlay">
+                            <p>📍 Las Palmas, Febrero 2026</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/card_guanche.png" alt="Carta Guanche"
+                            style="object-fit:contain;background:#0a1628;padding:8px;" />
+                        <div class="gallery-overlay">
+                            <p>Carta Guanchito</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/card_teide.png" alt="Carta Teide"
+                            style="object-fit:contain;background:#0a1628;padding:8px;" />
+                        <div class="gallery-overlay">
+                            <p>Carta El Teide</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/card_back.png" alt="Dorso de carta"
+                            style="object-fit:contain;background:#d4a843;padding:8px;" />
+                        <div class="gallery-overlay">
+                            <p>Diseño del mazo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-proof">
+                    <div class="sp-stat"><span class="sp-num">+800</span><span class="sp-label">Partidas jugadas</span>
+                    </div>
+                    <div class="sp-stat"><span class="sp-num">23</span><span class="sp-label">Eventos realizados</span>
+                    </div>
+                    <div class="sp-stat"><span class="sp-num">7</span><span class="sp-label">Islas visitadas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

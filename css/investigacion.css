@@ -1,0 +1,218 @@
+/* ============================================================
+   css/investigacion.css – Research Menu Section
+   Horizontal large-button menu with scroll-triggered animation
+   ============================================================ */
+
+.invest-section {
+    padding: 80px 0 60px;
+}
+
+/* ── Horizontal Menu Track ── */
+.invest-menu-wrap {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Fade edge indicator to hint scroll */
+.invest-menu-wrap::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(to right, transparent, var(--navy));
+}
+
+.invest-menu {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 16px 24px 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.invest-menu::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Individual Topic Button (large, horizontal) ── */
+.invest-btn {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    min-width: 190px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: left;
+    color: var(--text);
+
+    /* ── Scroll-triggered insert animation (starts hidden) ── */
+    opacity: 0;
+    transform: translateX(-22px);
+    /* transition for the animation is added by JS after IO fires */
+}
+
+/* Animated state (added by IntersectionObserver) */
+.invest-btn.btn-slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.invest-btn:hover,
+.invest-btn.active {
+    background: rgba(212, 168, 67, .08);
+    border-color: rgba(212, 168, 67, .35);
+}
+
+.invest-btn.active {
+    background: rgba(212, 168, 67, .12);
+    border-color: var(--gold);
+}
+
+.invest-btn-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.invest-btn-title {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.invest-btn-sub {
+    font-size: .74rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+}
+
+/* ── Scroll indicator arrows ── */
+.invest-arrows {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: -4px;
+    margin-bottom: 12px;
+}
+
+.invest-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-dim);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.invest-arrow:hover {
+    background: rgba(212, 168, 67, .1);
+    border-color: rgba(212, 168, 67, .3);
+    color: var(--gold);
+}
+
+/* ── Panel (content for selected topic) ── */
+.invest-panel {
+    background: rgba(var(--navy-mid-rgb), .85);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    min-height: 280px;
+    animation: fadeUp .45s var(--ease) both;
+}
+
+.invest-panel-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.invest-panel-icon {
+    font-size: 5rem;
+    text-align: center;
+    line-height: 1;
+}
+
+.invest-panel h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.invest-panel .panel-lead {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.invest-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.invest-fact {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.fact-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.invest-fact p {
+    font-size: .88rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .invest-panel-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .invest-panel-icon {
+        font-size: 3rem;
+    }
+
+    .invest-panel {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .invest-btn {
+        min-width: 150px;
+        padding: 16px 14px;
+    }
+
+    .invest-btn-icon {
+        font-size: 1.5rem;
+    }
+}

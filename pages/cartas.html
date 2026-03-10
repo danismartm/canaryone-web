@@ -1,0 +1,217 @@
+<!-- pages/cartas.html – Card Explainer Section -->
+
+<section class="cartas-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">🃏 El Mazo</span>
+            <h2>Las Cartas del Juego</h2>
+            <p>120 cartas distribuidas en 6 series temáticas. Pasa el ratón por encima para descubrir sus secretos.</p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="cartas-tabs">
+            <button class="cartas-tab active" data-filter="all">Todas</button>
+            <button class="cartas-tab" data-filter="guanche">Guanches</button>
+            <button class="cartas-tab" data-filter="volcan">Volcanes</button>
+            <button class="cartas-tab" data-filter="flora">Flora</button>
+            <button class="cartas-tab" data-filter="fauna">Fauna</button>
+            <button class="cartas-tab" data-filter="gastro">Gastronomía</button>
+            <button class="cartas-tab" data-filter="monumento">Monumentos</button>
+        </div>
+
+        <!-- Cards grid -->
+        <div class="cartas-grid" id="cartasGrid">
+
+            <!-- Guanche -->
+            <div class="flip-card" data-series="guanche">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <div class="flip-front-img" style="background-image:url('assets/card_guanche.png')"></div>
+                        <div class="flip-front-overlay"></div>
+                        <div class="flip-front-info">
+                            <span class="flip-series-badge series-guanche">Guanches</span>
+                            <div class="flip-card-name">El Guerrero</div>
+                            <div class="flip-score">⭐ 35 pts</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <span class="flip-back-badge series-guanche">Serie: Guanches</span>
+                        <h3>El Guerrero Mencey</h3>
+                        <p>Líder de los guanches de Tenerife. Resistió la conquista castellana durante décadas en la
+                            comarca del Menceyato.</p>
+                        <div class="flip-back-stats">
+                            <div class="flip-stat"><span class="flip-stat-val">35</span><span
+                                    class="flip-stat-lbl">Pts</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">Raro</span><span
+                                    class="flip-stat-lbl">Rareza</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">⚔️</span><span
+                                    class="flip-stat-lbl">Tipo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volcán -->
+            <div class="flip-card" data-series="volcan">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <div class="flip-front-img" style="background-image:url('assets/card_teide.png')"></div>
+                        <div class="flip-front-overlay"></div>
+                        <div class="flip-front-info">
+                            <span class="flip-series-badge series-volcan">Volcanes</span>
+                            <div class="flip-card-name">El Teide</div>
+                            <div class="flip-score">⭐ 50 pts</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <span class="flip-back-badge series-volcan">Serie: Volcanes</span>
+                        <h3>El Teide – Techo de España</h3>
+                        <p>Con 3.715 m, es el pico más alto de España y el tercer volcán más grande del mundo.
+                            Patrimonio de UNESCO.</p>
+                        <div class="flip-back-stats">
+                            <div class="flip-stat"><span class="flip-stat-val">50</span><span
+                                    class="flip-stat-lbl">Pts</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">Épico</span><span
+                                    class="flip-stat-lbl">Rareza</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">🌋</span><span
+                                    class="flip-stat-lbl">Tipo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flora -->
+            <div class="flip-card" data-series="flora">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <div class="flip-front-img"
+                            style="background-image:url('assets/card_back.png');filter:hue-rotate(100deg) brightness(.9)">
+                        </div>
+                        <div class="flip-front-overlay"></div>
+                        <div class="flip-front-info">
+                            <span class="flip-series-badge series-flora">Flora</span>
+                            <div class="flip-card-name">El Drago Milenario</div>
+                            <div class="flip-score">⭐ 40 pts</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <span class="flip-back-badge series-flora">Serie: Flora</span>
+                        <h3>Drago Milenario de Icod</h3>
+                        <p>El árbol más antiguo del archipiélago, con más de 800 años. Su savia roja fue llamada "sangre
+                            de dragón" por los guanches.</p>
+                        <div class="flip-back-stats">
+                            <div class="flip-stat"><span class="flip-stat-val">40</span><span
+                                    class="flip-stat-lbl">Pts</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">Inusual</span><span
+                                    class="flip-stat-lbl">Rareza</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">🌿</span><span
+                                    class="flip-stat-lbl">Tipo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fauna -->
+            <div class="flip-card" data-series="fauna">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <div class="flip-front-img"
+                            style="background-image:url('assets/card_back.png');filter:hue-rotate(200deg) brightness(.85)">
+                        </div>
+                        <div class="flip-front-overlay"></div>
+                        <div class="flip-front-info">
+                            <span class="flip-series-badge series-fauna">Fauna</span>
+                            <div class="flip-card-name">El Lagarto Gigante</div>
+                            <div class="flip-score">⭐ 30 pts</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <span class="flip-back-badge series-fauna">Serie: Fauna</span>
+                        <h3>Lagarto Gigante de El Hierro</h3>
+                        <p>Especie endémica redescubierta en 1999. Puede alcanzar 60 cm y es uno de los reptiles más
+                            raros de Europa.</p>
+                        <div class="flip-back-stats">
+                            <div class="flip-stat"><span class="flip-stat-val">30</span><span
+                                    class="flip-stat-lbl">Pts</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">Común</span><span
+                                    class="flip-stat-lbl">Rareza</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">🦎</span><span
+                                    class="flip-stat-lbl">Tipo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gastronomía -->
+            <div class="flip-card" data-series="gastro">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <div class="flip-front-img"
+                            style="background-image:url('assets/card_back.png');filter:hue-rotate(320deg) brightness(.9)">
+                        </div>
+                        <div class="flip-front-overlay"></div>
+                        <div class="flip-front-info">
+                            <span class="flip-series-badge series-gastro">Gastronomía</span>
+                            <div class="flip-card-name">El Gofio</div>
+                            <div class="flip-score">⭐ 20 pts</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <span class="flip-back-badge series-gastro">Serie: Gastronomía</span>
+                        <h3>El Gofio Canario</h3>
+                        <p>Harina tostada de cereales y legumbres, base de la dieta guanche durante siglos. Hoy símbolo
+                            culinario de las islas.</p>
+                        <div class="flip-back-stats">
+                            <div class="flip-stat"><span class="flip-stat-val">20</span><span
+                                    class="flip-stat-lbl">Pts</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">Común</span><span
+                                    class="flip-stat-lbl">Rareza</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">🌾</span><span
+                                    class="flip-stat-lbl">Tipo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monumento -->
+            <div class="flip-card" data-series="monumento">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <div class="flip-front-img"
+                            style="background-image:url('assets/islands_map.png');background-size:cover"></div>
+                        <div class="flip-front-overlay"></div>
+                        <div class="flip-front-info">
+                            <span class="flip-series-badge series-monumento">Monumentos</span>
+                            <div class="flip-card-name">Cueva de los Verdes</div>
+                            <div class="flip-score">⭐ 25 pts</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <span class="flip-back-badge series-monumento">Serie: Monumentos</span>
+                        <h3>Cueva de los Verdes</h3>
+                        <p>Tubo volcánico de 6 km en Lanzarote formado hace 3.000 años. Alberga uno de los lagos
+                            subterráneos más sorprendentes del mundo.</p>
+                        <div class="flip-back-stats">
+                            <div class="flip-stat"><span class="flip-stat-val">25</span><span
+                                    class="flip-stat-lbl">Pts</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">Inusual</span><span
+                                    class="flip-stat-lbl">Rareza</span></div>
+                            <div class="flip-stat"><span class="flip-stat-val">🏛️</span><span
+                                    class="flip-stat-lbl">Tipo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /cartas-grid -->
+
+        <!-- Reglas de juego mini -->
+        <div style="max-width:700px;margin:52px auto 0;text-align:center;">
+            <p style="color:var(--text-dim);font-size:.9rem;line-height:1.7">
+                Cada carta tiene un valor de puntos, una rareza y una categoría. Combina cartas de la misma serie para
+                activar bonificaciones 🌋 o neutraliza las de tu rival con las cartas de Guanche ⚔️.
+            </p>
+        </div>
+
+    </div>
+</section>

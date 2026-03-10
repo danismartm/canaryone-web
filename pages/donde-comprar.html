@@ -1,0 +1,109 @@
+<!-- pages/donde-comprar.html – Dónde Comprar section fragment -->
+
+<section class="buy-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">📍 Encuéntranos</span>
+            <h2>Dónde Comprar</h2>
+            <p>Disponible en tiendas, museos y librerías de todo el archipiélago</p>
+        </div>
+
+        <!-- Island selector -->
+        <div class="island-selector-wrap"
+            style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 24px; margin-top: 32px;">
+            <label for="islandSelect" class="island-select-label" style="margin-bottom: 10px;">🏝️ Selecciona una
+                isla</label>
+            <div class="island-select-container" style="position: relative; z-index: 10;">
+                <select id="islandSelect" class="island-select">
+                    <option value="Tenerife">Tenerife</option>
+                    <option value="Gran Canaria">Gran Canaria</option>
+                    <option value="Fuerteventura">Fuerteventura</option>
+                    <!-- ISLAS FUTURAS (DESCOMENTAR CUANDO TENGAN TIENDAS)
+                    <option value="Lanzarote">Lanzarote</option>
+                    <option value="La Palma">La Palma</option>
+                    <option value="La Gomera">La Gomera</option>
+                    <option value="El Hierro">El Hierro</option>
+                    <option value="all">Todas las islas</option>
+                    -->
+                </select>
+                <span class="island-select-arrow">▾</span>
+            </div>
+            <p
+                style="margin-top: 8px; font-size: 1.1rem; color: #ffffff; font-style: italic; opacity: 0.8; z-index: 1; position: relative;">
+                🚀 Próximamente en el resto de islas...
+            </p>
+        </div>
+
+        <div class="buy-grid">
+            <!-- Map -->
+            <div class="map-wrap">
+                <div class="map-legend">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <span class="legend-item"><span class="pin-dot store"></span>Tienda</span>
+                        <span class="legend-item"><span class="pin-dot museum"></span>Museo</span>
+                        <span class="legend-item"><span class="pin-dot books"></span>Librería</span>
+                    </div>
+                    <button class="reset-map-btn" id="resetMapBtn">👁️ Vista general de la isla</button>
+                </div>
+                <div id="buyMap"></div>
+            </div>
+
+            <!-- Store list -->
+            <div class="store-list" id="storeList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- B2B Form -->
+        <div class="b2b-card">
+            <div class="b2b-info">
+                <span class="b2b-badge">🎓 Canal Educativo &amp; Mayoristas</span>
+                <h3>¿Eres colegio o distribuidor?</h3>
+                <p>Consigue precios especiales por volumen. Rellenea el formulario y te respondemos en 24h.</p>
+                <ul class="b2b-features">
+                    <li>✅ Descuentos desde 20 unidades</li>
+                    <li>✅ Material pedagógico incluido</li>
+                    <li>✅ Talleres formativos a coste cero</li>
+                    <li>✅ Factura oficial</li>
+                </ul>
+            </div>
+            <form class="b2b-form" id="b2bForm">
+                <div class="form-group">
+                    <label for="b2b-name">Nombre del centro / empresa</label>
+                    <input type="text" id="b2b-name" placeholder="Ej. CEIP Las Nieves" required />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="b2b-email">Email</label>
+                        <input type="email" id="b2b-email" placeholder="contacto@colegio.es" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="b2b-phone">Teléfono</label>
+                        <input type="tel" id="b2b-phone" placeholder="+34 600 000 000" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="b2b-type">Tipo de organización</label>
+                    <select id="b2b-type">
+                        <option value="">Selecciona...</option>
+                        <option value="school">Centro Escolar</option>
+                        <option value="museum">Museo / Centro Cultural</option>
+                        <option value="store">Tienda / Distribuidor</option>
+                        <option value="council">Ayuntamiento / Cabildo</option>
+                        <option value="other">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="b2b-units">Unidades aproximadas</label>
+                    <input type="number" id="b2b-units" placeholder="Ej. 50" min="20" />
+                </div>
+                <div class="form-group">
+                    <label for="b2b-msg">Mensaje (opcional)</label>
+                    <textarea id="b2b-msg" rows="3" placeholder="Cuéntanos más sobre vuestro proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width" id="b2bSubmit">Solicitar Presupuesto →</button>
+                <p class="form-note">🔒 Tus datos son confidenciales y nunca serán cedidos a terceros.</p>
+            </form>
+        </div>
+    </div>
+</section>

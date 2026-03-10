@@ -1,0 +1,316 @@
+/* ============================================================
+   css/navbar.css – Classic Navbar + SOS Button
+   ============================================================ */
+
+/* ── Classic Navbar (hidden in novel mode, shown in classic mode) ── */
+#classic-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 800;
+    background: rgba(var(--navy-rgb), .92);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 2px 32px rgba(0, 0, 0, .4);
+    transform: translateY(-100%);
+    transition: transform .45s var(--ease), opacity .45s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#classic-nav.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: .04em;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.nav-logo .logo-c {
+    color: var(--gold);
+}
+
+.nav-logo .logo-one {
+    color: var(--teal-light);
+}
+
+.nav-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links button,
+.nav-links a {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: var(--transition);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links button:hover,
+.nav-links a:hover {
+    background: var(--card-bg);
+    color: var(--white);
+}
+
+/* ── Dropdown ── */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-toggle svg {
+    transition: transform var(--transition);
+}
+
+.has-dropdown:hover .dropdown-toggle svg {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: rgba(var(--navy-rgb), .98);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: var(--transition);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .3);
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(4px);
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu button,
+.dropdown-menu a {
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    justify-content: flex-start;
+}
+
+.nav-cta-buy {
+    margin-left: 12px;
+    padding: 9px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    font-weight: 700;
+    font-size: .9rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nav-cta-buy:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* Ham mobile */
+#nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* ── Theme Toggles ── */
+.theme-toggle-btn {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: var(--transition);
+    background: var(--card-bg);
+    padding: 0 !important;
+}
+
+.theme-toggle-btn:hover {
+    opacity: 1;
+    background: var(--card-border);
+}
+
+/* ── SOS Button ── */
+#sos-btn {
+    position: fixed;
+    right: 24px;
+    bottom: 28px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: rgba(var(--navy-rgb), .85);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(212, 168, 67, .4);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: .88rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .5);
+    animation: fadeUp .6s .8s both;
+}
+
+#sos-btn:hover {
+    background: rgba(var(--navy-mid-rgb), .95);
+    border-color: var(--gold);
+    box-shadow: 0 6px 28px rgba(212, 168, 67, .25);
+    transform: translateY(-2px);
+}
+
+#sos-btn .sos-icon {
+    font-size: 1.1rem;
+}
+
+/* Classic mode: button becomes "close" style */
+#sos-btn.classic-mode {
+    border-color: rgba(20, 184, 184, .5);
+    color: var(--teal-light);
+}
+
+#sos-btn.classic-mode:hover {
+    border-color: var(--teal-light);
+    box-shadow: 0 6px 28px rgba(20, 184, 184, .2);
+}
+
+.nav-mobile-controls {
+    display: none;
+    align-items: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-mobile-controls {
+        display: flex;
+    }
+
+    #nav-hamburger {
+        display: flex;
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(var(--navy-rgb), .97);
+        padding: 12px 0;
+        border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav-links.open button,
+    .nav-links.open a {
+        padding: 14px 24px;
+        border-radius: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Mobile Dropdown */
+    .has-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-left: 16px;
+        display: flex;
+        border-left: 2px solid var(--card-border);
+        border-radius: 0;
+    }
+
+    .dropdown-menu button,
+    .dropdown-menu a {
+        padding: 12px 24px;
+    }
+
+    .nav-cta-buy {
+        font-size: .8rem;
+        padding: 9px 14px;
+    }
+
+    #sos-btn {
+        right: 16px;
+        bottom: 16px;
+        padding: 10px 14px;
+        font-size: .8rem;
+    }
+}

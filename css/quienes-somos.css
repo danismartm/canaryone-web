@@ -1,0 +1,172 @@
+/* ============================================================
+   css/quienes-somos.css – Quiénes Somos section
+   ============================================================ */
+
+.about-section {
+    padding: 80px 0 100px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 72px;
+}
+
+.about-mission {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.about-block {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: var(--transition);
+}
+
+.about-block:hover {
+    border-color: rgba(212, 168, 67, .2);
+    background: var(--card-bg);
+}
+
+.about-icon {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+}
+
+.about-block h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--gold);
+}
+
+.about-block p {
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-size: .95rem;
+}
+
+.about-values {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 28px;
+}
+
+.values-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 22px;
+}
+
+.value-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.value-item:last-child {
+    margin-bottom: 0;
+}
+
+.value-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.value-item strong {
+    display: block;
+    font-size: .92rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.value-item p {
+    font-size: .85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+/* Team */
+.team-section {
+    text-align: center;
+}
+
+.team-title {
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    font-weight: 800;
+    margin-bottom: 36px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212, 168, 67, .22);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, .3);
+}
+
+.team-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--white);
+    border: 2px solid rgba(212, 168, 67, .25);
+}
+
+.team-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    font-size: .82rem;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+}
+
+.team-island {
+    font-size: .78rem;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+    }
+}

@@ -1,0 +1,385 @@
+/* ============================================================
+   css/global.css – Design tokens, reset, shared utilities
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
+
+/* ── Design Tokens (Dark Mode Default) ── */
+:root {
+    /* Colors */
+    --navy: #0a1628;
+    --navy-mid: #122040;
+    --navy-light: #1a3a5c;
+    /* RGB para transparencias de Navy */
+    --navy-rgb: 10, 22, 40;
+    --navy-mid-rgb: 18, 32, 64;
+
+    --gold: #d4a843;
+    --gold-light: #f0c96b;
+    --gold-dim: rgba(212, 168, 67, .15);
+    --teal: #0f8a8a;
+    --teal-light: #14b8b8;
+    --cream: #fdf6e3;
+    --text: #e8eaf0;
+    --text-dim: #9bacc4;
+    --white: #ffffff;
+    --dialog-bg: rgba(8, 18, 38, 0.95);
+    --card-border: rgba(255, 255, 255, .09);
+    --card-bg: rgba(255, 255, 255, .035);
+
+    /* Degradados Hero de Landing */
+    --hero-grad-1: #173a6a;
+    --hero-grad-2: #0a1628;
+    --hero-grad-3: #061020;
+
+    /* Layout */
+    --radius: 16px;
+    --radius-sm: 8px;
+    --radius-xl: 24px;
+
+    /* Shadows */
+    --shadow: 0 20px 60px rgba(0, 0, 0, .45);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, .55);
+    --shadow-gold: 0 8px 28px rgba(212, 168, 67, .35);
+
+    /* Animation */
+    --ease: cubic-bezier(.4, 0, .2, 1);
+    --transition: .35s var(--ease);
+
+    /* Typography */
+    --font: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+/* ── Design Tokens (Light Mode Override) ── */
+:root[data-theme="light"] {
+    --navy: #f4f6fa;
+    --navy-mid: #ffffff;
+    --navy-light: #e0e5ed;
+    --navy-rgb: 244, 246, 250;
+    --navy-mid-rgb: 255, 255, 255;
+
+    --gold: #b38822;
+    /* Dorado un poco más oscuro para asegurar contraste en claro */
+    --gold-light: #d4a843;
+    --gold-dim: rgba(179, 136, 34, .15);
+    --teal: #0c6a6a;
+    --teal-light: #0f8a8a;
+    --cream: #fdf6e3;
+    --text: #1a2233;
+    --text-dim: #5c6778;
+    --white: #ffffff;
+    --dialog-bg: rgba(255, 255, 255, 0.95);
+    --card-border: rgba(0, 0, 0, .09);
+    --card-bg: rgba(0, 0, 0, .035);
+
+    --hero-grad-1: #e0e5ed;
+    --hero-grad-2: #f4f6fa;
+    --hero-grad-3: #ffffff;
+
+    --shadow: 0 20px 60px rgba(0, 0, 0, .08);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, .05);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--navy);
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+input,
+select,
+textarea,
+button {
+    font-family: var(--font);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ── Layout Utilities ── */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* ── Button Utilities ── */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(212, 168, 67, .25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+.btn-primary.full-width {
+    width: 100%;
+}
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: 1.5px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.btn-ghost:hover {
+    background: var(--card-bg);
+    border-color: var(--text-dim);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: .95rem;
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: 1.5px solid var(--gold);
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: rgba(212, 168, 67, .1);
+}
+
+.btn-teal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    color: var(--white);
+    font-weight: 700;
+    font-size: .95rem;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-teal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(20, 184, 184, .3);
+}
+
+/* ── Fade Animations ── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(.92)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0)
+    }
+
+    50% {
+        transform: rotate(45deg) translateY(6px)
+    }
+}
+
+.anim-fade-up {
+    animation: fadeUp .7s var(--ease) both;
+}
+
+.anim-fade-in {
+    animation: fadeIn .5s var(--ease) both;
+}
+
+.anim-scale-in {
+    animation: scaleIn .5s var(--ease) both;
+}
+
+/* ── Toast ── */
+#toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+    border: 1px solid rgba(212, 168, 67, .4);
+    border-radius: 12px;
+    padding: 14px 24px;
+    color: var(--text);
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s, transform .4s;
+    z-index: 9999;
+    white-space: nowrap;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ── Leaflet dark overrides ── */
+.leaflet-container {
+    background: var(--navy-mid) !important;
+}
+
+:root:not([data-theme="light"]) .leaflet-tile {
+    filter: brightness(.7) saturate(1.2) hue-rotate(200deg);
+}
+
+:root[data-theme="light"] .leaflet-tile {
+    filter: none;
+}
+
+.leaflet-popup-content-wrapper {
+    background: var(--navy-mid);
+    border: 1px solid rgba(212, 168, 67, .3);
+    color: var(--text);
+    border-radius: 10px !important;
+}
+
+.leaflet-popup-tip {
+    background: var(--navy-mid);
+}
+
+.leaflet-popup-content {
+    font-family: var(--font);
+    font-size: .88rem;
+}
+
+.leaflet-control-zoom a {
+    background: var(--navy-mid) !important;
+    color: var(--gold) !important;
+    border-color: rgba(212, 168, 67, .3) !important;
+}

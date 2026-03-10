@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CANARYONE – Descubre Canarias Jugando</title>
+    <meta name="description"
+        content="CANARYONE es el juego de cartas que te hace descubrir la historia, cultura y naturaleza de las Islas Canarias de una forma divertida y educativa." />
+
+    <!-- ── CSS Modules ── -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/novel.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="css/donde-comprar.css" />
+    <link rel="stylesheet" href="css/quienes-somos.css" />
+    <link rel="stylesheet" href="css/eventos.css" />
+    <link rel="stylesheet" href="css/cartas.css" />
+    <link rel="stylesheet" href="css/investigacion.css" />
+    <link rel="stylesheet" href="css/contacto.css" />
+    <link rel="stylesheet" href="css/historia.css" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
+    <!-- Extra: footer always visible -->
+    <style>
+        /* ── Body layout ── */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #app {
+            flex: 1;
+        }
+
+        /* In classic mode, hide inline dialog */
+        body.classic #novel-overlay {
+            display: none;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            background: var(--navy-mid);
+            padding: 48px 0 24px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 36px;
+            margin-bottom: 36px;
+        }
+
+        .footer-logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo .logo-c {
+            color: var(--gold);
+        }
+
+        .footer-logo .logo-one {
+            color: var(--teal-light);
+        }
+
+        .footer-brand p {
+            font-size: .88rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            max-width: 220px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .footer-social a {
+            font-size: 1.2rem;
+            opacity: .7;
+            transition: opacity .3s;
+        }
+
+        .footer-social a:hover {
+            opacity: 1;
+        }
+
+        .footer-col h4 {
+            font-size: .88rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer-col a,
+        .footer-col button {
+            font-size: .85rem;
+            color: var(--text-dim);
+            transition: color .3s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            padding: 0;
+        }
+
+        .footer-col a:hover,
+        .footer-col button:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px 0;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            font-size: .83rem;
+            color: var(--text-dim);
+        }
+
+        @media (max-width:768px) {
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width:480px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════
+       CLASSIC NAVBAR (hidden default)
+       ══════════════════════════════ -->
+    <nav id="classic-nav" role="navigation" aria-label="Navegación principal">
+        <div class="nav-inner">
+            <button class="nav-logo" id="nav-logo-btn" aria-label="Volver al inicio">
+                <span class="logo-c">C</span>ANARY<span class="logo-one">ONE</span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><button id="nav-home">Inicio</button></li>
+                <li><button id="nav-buy">Dónde Comprar</button></li>
+                <li><button id="nav-about">Quiénes Somos</button></li>
+                <li><button id="nav-events">Eventos</button></li>
+                <li class="has-dropdown">
+                    <button class="dropdown-toggle" aria-expanded="false">
+                        Explorar
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button id="nav-cards">Las Cartas</button></li>
+                        <li><button id="nav-research">Investigación</button></li>
+                        <li><button id="nav-story">Historia</button></li>
+                    </ul>
+                </li>
+                <li><button id="nav-contact">Contacto</button></li>
+                <!-- Botón de Modo Claro / Oscuro -->
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar Tema">☀️</button>
+                </li>
+            </ul>
+            <button class="nav-cta-buy" id="nav-cta-buy">Comprar Ahora</button>
+            <div class="nav-mobile-controls">
+                <!-- Botón Extra Modo Claro/Ocuro móvil si se desea -->
+                <button id="theme-toggle-mobile" class="theme-toggle-btn" aria-label="Cambiar Tema"
+                    style="margin-right: 12px; width: 36px; height: 36px; font-size: 1rem;">☀️</button>
+
+                <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════
+       PAGE CONTENT (injected by router)
+       ══════════════════════════════ -->
+    <main id="app">
+        <div id="page-content"></div>
+    </main>
+
+    <!-- ══════════════════════════════
+       FOOTER (always visible)
+       ══════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo"><span class="logo-c">C</span>ANARY<span class="logo-one">ONE</span></div>
+                <p>El juego de cartas que rescata el patrimonio canario mediante la gamificación.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="TikTok">🎵</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><button onclick="Router.go('landing')">Inicio</button></li>
+                    <li><button onclick="Router.go('donde-comprar')">Dónde Comprar</button></li>
+                    <li><button onclick="Router.go('quienes-somos')">Quiénes Somos</button></li>
+                    <li><button onclick="Router.go('eventos')">Eventos</button></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="mailto:hola@canaryone.es">hola@canaryone.es</a></li>
+                    <li><a href="tel:+34600000000">+34 600 000 000</a></li>
+                    <li style="color:var(--text-dim);font-size:.85rem">Las Palmas de Gran Canaria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 CANARYONE. Hecho con ❤️ en las Islas Canarias.
+        </div>
+    </footer>
+
+
+    <!-- ══════════════════════════════
+       SOS BUTTON (always visible)
+       ══════════════════════════════ -->
+    <button id="sos-btn" aria-label="Abrir menú de navegación clásico">
+        <span class="sos-icon">🆘</span>
+        <span class="sos-label">Menú / Socorro</span>
+    </button>
+
+    <!-- ══════════════════════════════
+       TOAST
+       ══════════════════════════════ -->
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <!-- ══════════════════════════════
+       JS MODULES (order matters)
+       ══════════════════════════════ -->
+    <script src="js/router.js?v=3"></script>
+    <script src="js/novel-engine.js?v=3"></script>
+    <script src="js/effects.js?v=3"></script>
+    <script src="js/map.js?v=3"></script>
+    <script src="js/form.js?v=3"></script>
+    <script src="js/app.js?v=3"></script>
+
+</body>
+
+</html>

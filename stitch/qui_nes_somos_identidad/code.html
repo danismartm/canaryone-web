@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiénes Somos - Canarias Jugando</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f49d25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221a10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-6 lg:px-40 py-4 bg-background-light dark:bg-background-dark/95 sticky top-0 z-50 backdrop-blur-sm">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-extrabold leading-tight tracking-tight">Canarias Jugando</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-semibold transition-colors" href="#">Inicio</a>
+<a class="text-primary text-sm font-semibold" href="#">Misión</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-semibold transition-colors" href="#">Equipo</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-semibold transition-colors" href="#">Contacto</a>
+</nav>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+</div>
+<!-- Mobile Menu Icon (Visual only) -->
+<div class="md:hidden flex items-center">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="px-6 lg:px-40 py-12">
+<div class="max-w-5xl mx-auto">
+<div class="relative overflow-hidden rounded-2xl bg-slate-800 aspect-[21/9] flex items-end p-8 lg:p-12 group" data-alt="Atardecer en los paisajes volcánicos de las Islas Canarias" style="background-image: linear-gradient(0deg, rgba(34, 26, 16, 0.9) 0%, rgba(34, 26, 16, 0.2) 60%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLtcUfRs93_-vjB9coBj29Jfukf8A2cGBNlohXIWqmpsk-s917vQNNx662Zx0BdOR7QJ-dg3dtiaKu0O2hiRlVdzCV7PV7ht6u7PPv3hr9z8Leg-NYpSbbAjiAn3XVZ9gFF6rFXLUVkGriqfoWWCV0CMJqUUuKWUwz_BLJdELSdYhNoiSYZngaN_nPDou9E6-qhN6sr8PDCfplYu1Aqtw4LYDyxevGnuBrCKHQMVAW1L9hmeI0kj-2a5A9dQrGj_rkYhOzk5-O6TLN'); background-size: cover; background-position: center;">
+<div class="relative z-10">
+<span class="inline-block px-3 py-1 rounded-full bg-primary text-background-dark text-xs font-bold uppercase tracking-widest mb-4">Nuestra Identidad</span>
+<h1 class="text-white text-4xl lg:text-6xl font-black leading-tight tracking-tighter">Quiénes Somos</h1>
+</div>
+</div>
+</div>
+</section>
+<!-- Introduction -->
+<section class="px-6 lg:px-40 py-8">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-primary text-3xl font-bold mb-6">Identidad y Tradición</h2>
+<p class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed font-medium">
+                            En <span class="text-primary font-bold">Canarias Jugando</span>, rescatamos el patrimonio canario a través de la ludificación, transformando nuestra rica historia y cultura en experiencias interactivas que conectan generaciones.
+                        </p>
+</div>
+</section>
+<!-- Mission & Vision -->
+<section class="px-6 lg:px-40 py-16 bg-primary/5">
+<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+<div class="flex flex-col gap-4 p-8 rounded-2xl bg-background-light dark:bg-background-dark border border-primary/10 shadow-xl shadow-primary/5">
+<div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-3xl">flag</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Misión</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Divulgar el patrimonio cultural, histórico y natural de las Islas Canarias mediante herramientas lúdicas y pedagógicas innovadoras que fomenten el arraigo y el conocimiento.
+                            </p>
+</div>
+<div class="flex flex-col gap-4 p-8 rounded-2xl bg-background-light dark:bg-background-dark border border-primary/10 shadow-xl shadow-primary/5">
+<div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-3xl">visibility</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Visión</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Convertirnos en el referente de gamificación cultural en el archipiélago, inspirando a jóvenes y adultos a descubrir sus raíces a través del juego y la exploración.
+                            </p>
+</div>
+</div>
+</section>
+<!-- Values -->
+<section class="px-6 lg:px-40 py-20">
+<div class="max-w-5xl mx-auto">
+<h3 class="text-slate-900 dark:text-white text-3xl font-bold text-center mb-12">Nuestros Valores</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-6 rounded-xl border border-slate-200 dark:border-primary/20 bg-background-light dark:bg-background-dark/50 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">eco</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Producción Responsable</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Comprometidos con el entorno canario en cada paso de nuestro proceso.</p>
+</div>
+</div>
+<div class="p-6 rounded-xl border border-slate-200 dark:border-primary/20 bg-background-light dark:bg-background-dark/50 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">school</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Rigor Pedagógico</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Contenidos validados por expertos en historia y educación canaria.</p>
+</div>
+</div>
+<div class="p-6 rounded-xl border border-slate-200 dark:border-primary/20 bg-background-light dark:bg-background-dark/50 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">diversity_3</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Inclusión Cultural</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Juegos diseñados para todas las edades y realidades sociales.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="px-6 lg:px-40 py-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-5xl mx-auto">
+<div class="mb-12 text-center">
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">El Equipo</h3>
+<p class="text-slate-600 dark:text-slate-400">Las mentes creativas detrás del tablero.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-primary/20 p-1">
+<img alt="Retrato de primer plano del fundador" class="w-full h-full object-cover rounded-full" data-alt="Retrato profesional del fundador de Canarias Jugando" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCINzN0mf2HcPcKNt0HD0iePA6Oqa-EikQQjMKrjId5HdkYZOv-GqAKCx6llKYqyfrEpOarObeMS74Hk0BOs9iL2C5jy2_1PWrcuWf8Lt9ZMbufZU2RZ-D8mYFQvW7JYRsbKYpO2Hzfh0jepaLXMTbKtS_MGB6yxcaizd1RYxkjV7IBVYckouxX-jQzWF7YLXz_2jZcLDZIDmsvkPwo3cTFVaZ4FBDQ7ZSJC1B4s0H0jb4fBt3hFhUrTGZsVNlASYhB7ifV87ZL-Ro2"/>
+</div>
+<h4 class="text-xl font-bold text-slate-900 dark:text-white">Fundador Principal</h4>
+<p class="text-primary font-semibold mb-4">Liderazgo y Estrategia</p>
+<p class="text-slate-600 dark:text-slate-400 max-w-sm">
+                                    Con años de experiencia en el sector educativo, fundó Canarias Jugando con el sueño de ver a las nuevas generaciones jugar con su propia historia.
+                                </p>
+</div>
+<div class="bg-primary/5 rounded-2xl p-8 border border-primary/10">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img alt="Retrato de primer plano de la Directora Creativa" class="w-full h-full object-cover" data-alt="Retrato de la directora creativa del equipo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsZhMh4-VYDClbyxaKAgu2dAVmKeeTXfPtrrxe705UO_pQD_ratDlZuGEtUERgHEx8asfAlxnoVEwlgWxVMY89SF3UYbcKpMJB3a_d6C7ikWEmzFhkXm_-qellwMgwcVc4yVKO2lPxbyJEXrDFhG9q4VifukhuNQg4bVgZmrTRK1iIzJ8byEJVP0zxuIYMFJ_NLhO_e2W0plgu7nxl-evJqEPkYPVzP_7e5d737TptZWmZJF-NjTUqYWSq3x3x6NiLby_UiA-NfAvr"/>
+</div>
+<div>
+<h5 class="font-bold">Dirección Creativa</h5>
+<p class="text-sm text-primary">Diseño y Gamificación</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img alt="Retrato de primer plano del Consultor Histórico" class="w-full h-full object-cover" data-alt="Retrato del consultor histórico del equipo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpd3XR7mwTgPxePpigFr4fq1Wrzu3vHTinLlA75A99jc8QOIaSEg4sLoFHKKAtOFELhVuWKSTfBtWSVhyy29V254VYMxSbxaipfTQgQ5aY1XBFRYL9G9cmkFbA1G6KJMZAza-uYMiqS2wgmhuyJnu_1sMVA8PO_H76eiZog5fEw8zmJxxHSIfnCcRCZGSdVCZkj4Umb-3jx8Q3dXcJzTPzFK2E0_ncu660iwC3fTA0CCoMamh8mNG27WyCaNAA7wXz76cKGi-JbRLx"/>
+</div>
+<div>
+<h5 class="font-bold">Consultoría Histórica</h5>
+<p class="text-sm text-primary">Patrimonio y Rigor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="px-6 lg:px-40 py-12 border-t border-primary/10 bg-background-light dark:bg-background-dark/50">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 text-primary opacity-80">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"></path>
+</svg>
+</div>
+<span class="font-bold">Canarias Jugando</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2024 Canarias Jugando. Transformando la historia en juego.</p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
